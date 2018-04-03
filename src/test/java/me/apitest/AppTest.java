@@ -33,6 +33,11 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+//    	APIConnection apiConnection = new APIConnection("http://localhost:8888/football/live");
+//        apiConnection.validateResponseStatusCode(apiConnection.get());
+    	
+//    	JSONObjectHandler jsonObjectConverter = new JSONObjectHandler();
+    	
+//    	jsonObjectConverter.getJSONObjectArray("http://localhost:8888/football/live");
     }
 }
