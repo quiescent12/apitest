@@ -8,6 +8,8 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 
+import me.apitest.objects.ResponseObject;
+
 import static org.junit.Assert.*;
 
 public class APIConnection {
@@ -38,8 +40,8 @@ public class APIConnection {
 			responseString.append(line);
 			}
 			
-			responseObject.setReponseBody(responseString.toString());
-			System.out.println("Response= " + responseObject.getReponseBody());
+			responseObject.setResponseBody(responseString.toString());
+			System.out.println("Response= " + responseObject.getResponseBody());
 			
 			System.out.println("Headers= " + response.getAllHeaders());
 			

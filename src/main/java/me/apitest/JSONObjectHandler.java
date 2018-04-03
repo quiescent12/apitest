@@ -5,38 +5,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.google.gson.internal.LinkedTreeMap;
+
+import me.apitest.objects.Event;
+import me.apitest.objects.Market;
+import me.apitest.objects.Outcome;
 
 public class JSONObjectHandler {
 
-	public ArrayList<LinkedTreeMap<String,Object>> getJSONObjectArray(String response, String responseContains) {
+	public Outcome getJSONObjectAsOutcome(String response) {
 		
-		Gson gson = new Gson();
-		Map<String,ArrayList<LinkedTreeMap<String,Object>>> map = new HashMap<String,ArrayList<LinkedTreeMap<String,Object>>>();
-		try {
-		map = (Map<String,ArrayList<LinkedTreeMap<String,Object>>>) gson.fromJson(response, map.getClass());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		ArrayList<LinkedTreeMap<String,Object>> array = map.get(responseContains);
-		return array;
+		Outcome outcome = new Gson().fromJson(response, Outcome.class);
+		return outcome;
 	}
 	
-	public LinkedTreeMap<String,Object> getJSONObjectLinkedTreeMap(String response, String responseContains) {
-		
-		Gson gson = new Gson();
-		Map<String,LinkedTreeMap<String,Object>> map = new HashMap<String,LinkedTreeMap<String,Object>>();
-		try {
-		map = (Map<String,LinkedTreeMap<String,Object>>) gson.fromJson(response, map.getClass());
-		
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		LinkedTreeMap<String,Object> treeMap = map.get(responseContains);
-		
-		return treeMap;
+	public Market getJSONObjectAsMarket(String response) {
+		Market market = new Gson().fromJson(response, Market.class);
+		return market;
+	}
+	
+	public Event getJSONObjectAsEvent(String response) {
+		Event event = new Gson().fromJson(response, Event.class);
+		return event;
 	}
 }

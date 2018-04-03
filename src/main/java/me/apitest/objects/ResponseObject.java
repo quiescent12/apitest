@@ -1,19 +1,19 @@
-package me.apitest;
+package me.apitest.objects;
 
 import java.util.HashMap;
 
 public class ResponseObject {
 
-	private String reponseBody;
+	private String responseBody;
 	private int statusCode;
 	private String responsePhrase;
 	private HashMap<String, String> headers;
 	
-	public String getReponseBody() {
-		return reponseBody;
+	public String getResponseBody() {
+		return responseBody;
 	}
-	public void setReponseBody(String reponseBody) {
-		this.reponseBody = reponseBody;
+	public void setResponseBody(String responseBody) {
+		this.responseBody = responseBody;
 	}
 	public int getStatusCode() {
 		return statusCode;

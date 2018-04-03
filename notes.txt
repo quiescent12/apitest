@@ -1,0 +1,18 @@
+Coding language: Java
+Built using: Maven
+HTTP connection jars used: Apache HTTPClient
+JSON handling/converting jars: Gson
+Scripting framework: Cucumber
+Script language: Gherkin
+Test runner: JUnit in conjunction with Cucumber
+
+Can be run by running CucumberRunner as a JUnit application. Ensure java is installed.
+
+Other tests:
+
+Check market id, outcome id and event ids are linked appropriately
+Test structure of what is returned from each endpoint E.g. prices returned, outcomes returned
+Test typeName availability for events e.g "Football Live"
+Test for different market styles E.g. win-draw-win and for the outcome types in the market
+Test the types of outcomes available in each market type E.g. for "Full Time Result" market
+  

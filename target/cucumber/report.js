@@ -1,29 +1,29 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/java/me/apitest/featurefiles/MarketTests.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/java/me/apitest/featurefiles/OutcomeTests.feature");
 formatter.feature({
-  "name": "As a user I wish to be able to see a market for ‘Both Teams To Score’ so that I",
-  "description": "can place a bet on this market (display property is true)",
+  "name": "As a user I want to see a Full Time Result market have Home, Away and Draw outcomes associated",
+  "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@MarketTests"
+      "name": "@OutcomeTests"
     }
   ]
 });
 formatter.scenario({
-  "name": "I can see a market named \"Both Teams To Score\" with display property as true",
+  "name": "Market has a name of Full Time Result",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@MarketTests"
+      "name": "@OutcomeTests"
     },
     {
-      "name": "@MarketTestThree"
+      "name": "@OutcomTestOne"
     }
   ]
 });
 formatter.step({
-  "name": "I get a response from \"http://localhost:8888/sportsbook/market/\" url with id \"93649377\"",
+  "name": "I get a response from \"http://localhost:8888/sportsbook/market/\" url with id \"93649304\"",
   "keyword": "Given "
 });
 formatter.match({
@@ -33,14 +33,112 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I assert market \"status\" has a \"suspended\" as \"false\"",
+  "name": "I assert market returned has \"name\" label as \"Full Time Result\"",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "StepDefinitions.assertMarketLabelsHasTags(String,String,String)"
+  "location": "StepDefinitions.assertAllMarketsAre(String,String)"
 });
 formatter.result({
-  "error_message": "org.junit.ComparisonFailure: Market label status does not have suspended tag as false expected:\u003c[fals]e\u003e but was:\u003c[tru]e\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat me.apitest.stepdefs.StepDefinitions.assertMarketLabelsHasTags(StepDefinitions.java:74)\r\n\tat ✽.I assert market \"status\" has a \"suspended\" as \"false\"(src/test/java/me/apitest/featurefiles/MarketTests.feature:18)\r\n",
-  "status": "failed"
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Outcome associated with Full Time Result market has away type",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@OutcomeTests"
+    },
+    {
+      "name": "@OutcomeTestTwo"
+    }
+  ]
+});
+formatter.step({
+  "name": "I get a response from \"http://localhost:8888/sportsbook/outcome/\" url with id \"367528726\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "StepDefinitions.getAResponseFromUrlWithId(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I assert the outcome has \"type\" label as \"away\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepDefinitions.assertOutcomeLabelsHasTags(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Outcome associated with Full Time Result market has draw type",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@OutcomeTests"
+    },
+    {
+      "name": "@OutcomeTestThree"
+    }
+  ]
+});
+formatter.step({
+  "name": "I get a response from \"http://localhost:8888/sportsbook/outcome/\" url with id \"367528720\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "StepDefinitions.getAResponseFromUrlWithId(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I assert the outcome has \"type\" label as \"draw\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepDefinitions.assertOutcomeLabelsHasTags(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Outcome associated with Full Time Result market has home type",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@OutcomeTests"
+    },
+    {
+      "name": "@OutcomeTestFour"
+    }
+  ]
+});
+formatter.step({
+  "name": "I get a response from \"http://localhost:8888/sportsbook/outcome/\" url with id \"367528716\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "StepDefinitions.getAResponseFromUrlWithId(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I assert the outcome has \"type\" label as \"home\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepDefinitions.assertOutcomeLabelsHasTags(String,String)"
+});
+formatter.result({
+  "status": "passed"
 });
 });
